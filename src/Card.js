@@ -1,28 +1,26 @@
 import React from "react";
 import "./Card.css";
 
-function Card() {
+function Card(props) {
   return (
     <div className="Card__widget">
-      <img
-        src="https://avatars.githubusercontent.com/u/1?v=4"
-        alt=""
-        className="profile__pic"
-      />
+      <img src={props.user.avatar_url} alt="Pic" className="profile__pic" />
       <div className="details">
-        <h1 className="name">Mostapha M Amin</h1>
+        <h1 className="name">{props.user.login}</h1>
         <div className="details__container">
           <a
             style={{ display: "table-cell" }}
-            href="https://github.com/mojombo"
+            href={props.user.html_url}
             target="_blank"
           >
-            Go to GitHub
+            Open GitHub
           </a>
           <br />
-          <h3 className="type">This guy is a User</h3>
+          <h3 className="type">This guy is a {props.user.type}</h3>
           <br />
-          <h4 className="admin__check">This guy is not admin</h4>
+          <h4 className="admin__check">
+            {props.user.site_admin ? "Admin" : "Not Admin"}
+          </h4>
         </div>
       </div>
     </div>
