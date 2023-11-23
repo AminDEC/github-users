@@ -1,3 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.list {
+  width: max-content;
+  margin: auto;
+  height: 100vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list__item {
+  margin-top: 20px;
+}
+
+.img__back {
+  width: 100%;
+  height: 100%;
+  filter: blur(3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
